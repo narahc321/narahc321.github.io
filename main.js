@@ -32,6 +32,9 @@ function createBalloons(num) {
 
 function startBalloons() {
   createBalloons(100);
+  setTimeout(() => {
+    document.getElementById('birthdayMusic').play();
+  }, 500)
 }
 
 window.onload = function () {
