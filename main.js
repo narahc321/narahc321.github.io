@@ -1,4 +1,5 @@
 const startTime = new Date().getTime();
+var loaderAnimation = true;
 
 function random(num) {
   return Math.floor(Math.random() * num);
@@ -30,16 +31,21 @@ function createBalloons(num) {
   }
 }
 
-function startBalloons() {
-  createBalloons(100);
-  setTimeout(() => {
-    document.getElementById('birthdayMusic').play();
-  }, 500)
-}
+// window.onload = function () {};
 
-window.onload = function () {
-  setInterval(startBalloons, 5000);
-};
+$("#loading-text").click(function () {
+  createBalloons(100);
+  loaderAnimation = false;
+  $("#loader").fadeOut("normal", function () {
+    $(this).remove();
+  });
+  $("#loading-text").fadeOut("normal", function () {
+    $(this).remove();
+  });
+  setTimeout(() => {
+    document.getElementById("birthdayMusic").play();
+  }, 500);
+});
 
 Loadr = new (function Loadr(id) {
   // # Defines
@@ -163,15 +169,11 @@ Loadr = new (function Loadr(id) {
       p.draw();
     });
 
-    if (Date.now() - startTime < 10000) {
+    if (loaderAnimation) {
       requestAnimationFrame(tick);
-    } else {
-      $("#" + id).fadeOut("normal", function () {
-        $(this).remove();
-      });
-      $("#loading-text").fadeOut("normal", function () {
-        $(this).remove();
-      });
+    }
+    if (Date.now() - startTime > 6000) {
+      $("#loading-text").text("Click Here");
     }
   }
 
