@@ -195,7 +195,7 @@ var w = (birthdaycanvas.width = window.innerWidth),
   hw = w / 2, // half-width
   hh = h / 2,
   opts = {
-    strings: ["HAPPY", "BIRTHDAY", " RENU!"],
+    strings: ["HAPPY", "BIRTHDAY", "RENU!"],
     charSize: 30,
     charSpacing: 35,
     lineHeight: 40,
