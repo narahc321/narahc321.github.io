@@ -31,7 +31,7 @@ body {
   line-height:420px;
   font-size:24px;
   color:rgb(0, 0, 0);
-  font-weight:150;
+  font-weight:500;
 }
 
 
@@ -92,3 +92,14 @@ body {
     opacity: 0;
   }
 }
+
+
+#birthdaycanvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+body {
+	overflow: hidden;
+}
+
