@@ -615,20 +615,10 @@ const $VIDEO = document.querySelector(".video"),
   $FULLSCREEN = document.querySelector(".fullscreen-video");
 
 function durationVideo() {
-  let durationMidia = $VIDEO.duration,
-    $durationTime = document.querySelector(".duration-time");
-  $durationTime.innerHTML = transformVideoDuration(durationMidia);
   animationVolume($VIDEO.volume);
 }
 
 function progressVideo() {
-  var autoProgress = $VIDEO.currentTime,
-    $progressBar = document.querySelector(".progress-video"),
-    $progressTime = document.querySelector(".progress-time");
-  $progressBar.value = autoProgress.toFixed(0);
-  $progressBar.setAttribute("max", $VIDEO.duration);
-
-  $progressTime.innerHTML = transformVideoDuration(autoProgress);
   animationProgress();
 }
 
@@ -638,11 +628,7 @@ function ChangeProgressVideo() {
 }
 
 function animationProgress() {
-  let percentageProgress =
-    (($PROGRESS_VIDEO.value - $PROGRESS_VIDEO.min) * 100) /
-    ($PROGRESS_VIDEO.max - $PROGRESS_VIDEO.min);
-  $PROGRESS_VIDEO.style.backgroundSize = `${percentageProgress}% 100%`;
-  console.log("progress: " + percentageProgress);
+  
 }
 
 function animationVolume(volume) {
@@ -683,12 +669,10 @@ function playAndPause() {
   let $playButton = document.querySelector(".play-and-pause-video");
   if ($VIDEO.paused == true) {
     playVideo();
-    $playButton.classList.remove("fa-play");
-    $playButton.classList.add("fa-pause");
+    
   } else {
     pauseVideo();
-    $playButton.classList.remove("fa-pause");
-    $playButton.classList.add("fa-play");
+    
   }
 }
 
