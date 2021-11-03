@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Happy Birthday</title>
+    <link rel="Favicon icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="balloon-container"></div>
+
+    <div class="loader">
+      <canvas width="480px" height="480px" id="loader"></canvas>
+      <h1 id="loading-text">Loading..</h1>
+    </div>
+    <div id="birthday-wishes-div" style="display: none">
+      <canvas id="birthdaycanvas"></canvas>
+    </div>
+
+    <div class="video-container" id="my-video-player" style="display: none">
+      <video
+        src="./assets/birthdaywishes.mp4"
+        class="video"
+        width="1000"
+      ></video>
+    </div>
+
+    <!--  -->
+
+    <script src="main.js" charset="utf-8"></script>
+    <audio id="birthdayMusic" src="./assets/birthdayMusic.mp3"></audio>
+  </body>
+</html>
